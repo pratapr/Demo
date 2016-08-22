@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html ng-app="Mymodule">
+<head>
+    <title>AngularJS</title>
+	<meta charset="utf-8" />
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/Script.js"></script>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+</head>
+<body >
+        <h1 style="color:red;text-align:center;font-size:400%;">
+
+            <a href="https://en.wikipedia.org/wiki/India">
+                
+                <img src="Resources/BHARATMATA.jpg" alt="JBPSchool.com" usemap="#planetmap" style="float:left;width:204px;height:140px;">
+            </a>
+
+           <!.... <map name="planetmap">
+                <area shape="rect" coords="0,0,30,124" alt="Sun" href="https://en.wikipedia.org/wiki/Maharashtra">
+                <area shape="circle" coords="44,98,8" alt="Mercury" href="https://en.wikipedia.org/wiki/Andhra_Pradesh">
+                <area shape="circle" coords="44,118,8" alt="Venus" href="https://en.wikipedia.org/wiki/Tamil_Nadu">
+            </map>
+
+            Jai Bharath Public School<sup style="font-size:50%" ;>Krosur</sup>
+        </h1>
+        <address style="text-align:center" ;>Vidyanagar,krosur(M),Guntur(D),AP.</address><hr>
+        <ul id="menu">
+            <li><a href="/html/default.asp">Home</a></li>
+            <li><a href="/css/default.asp">Directions</a></li>
+            <li><a href="/js/default.asp">Parentinformation</a></li>
+            <li><a href="/php/default.asp">contact</a></li>
+            <li><a href="/php/default.asp">Staffonly</a></li>
+        </ul>
+    </div>
+
+    <div id="nav">
+        <iframe width="100%" height="300px" src="http://sakshieducation.com/Tclass/Index.html" name="iframe_a" style="border:none"></iframe>
+        <a href="http://www.w3schools.com" target="iframe_a">About This  JBP School</a>
+        <br /><a href="#C4">click here to know about this school</a>
+        <img id="myImage" src="/Resources/images.jpe" alt="problem is in script" width="100%" height="180">
+        <input type="button" onclick="alert('hi how r u')" value="Click Me!">
+        
+            <ul ng-controller="mycontroller">
+                <li ng-repeat="country in map1">
+                    {{ country.name }}
+                    <ul>
+                        <li ng-repeat="city in country.cities">
+                            {{ city.name }}
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+         
+    </div>
+
+    <div id="section ; style=" background-color:#e6e6ff; color:black">
+        <h1 title="Jai Bharath Public School" ;>JBP School</h1>
+        <p title="about JBP School" style="font-family:courier;">
+            <i><mark>jbp school</mark></i> is the best school in <abbr title="It is one of the mondal in guntur distric">krosure</abbr> rural area.
+            <b>Most of the parents are interested to join their children in this school only</b>
+            <span id="C4" style="background-color:rgb(128,128,128);color:white" ;>
+                JBP School serves LKG to 10<sup>th</sup> students both in english and telugu medium with
+                <span class="note">chandramouli reddy</span> as principal.
+                The school’s goal is to provide a caring, stimulating learning environment where children are challenged with rigorous standards.
+                School officials are committed to their responsibility of fostering learning through meaningful instruction within a balanced and interactive curriculum.
+                Ultimately, teachers and staff want students to have a strong academic foundation and the ability to apply knowledge to think critically and communicate effectively.
+                Middle school students may participate in Latin, Spanish, art, choral music, strings, computer literacy, drama, STEM, physical education and band.
+                There are six sports programs available to students. There are 49 teachers with advanced degrees and 12 are Government Certified.
+            </span>
+            <mark id="p01"> This is the one of the best school.</mark>
+            <mark class="error">But a little bit expensive &#8377 when compare to the Government schools</mark>
+        </p>
+        <div>
+            10+18={{10+18}}
+            <br />
+            {{10==18}}
+            <br />
+            {{10==10}}
+            <br />
+            Printing the name attribute in a script:{{ {name:"Prathap",age:23,gender:"male"}.name}}
+            <br />
+            Printing the value of an array for given position:{{ ["prathap","Ravi","Nagesh","Manu"][2]}}
+        </div>
+
+        <hr>
+        <div ng-controller="mycontroller">
+            Rows to display:<input type="number" step="1" min="0" max="10" ng-model="rowlimit" />
+            <br />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Teacher</th>
+                        <th>Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="student in classe | limitTo:rowlimit">
+                        <td>{{student.Class|currency}}</td>
+                        <td>{{student.Teacher|uppercase}}</td>
+                        <td>{{student.Capacity|number}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            Rows to display:<input type="number" step="1" min="0" max="4" ng-model="Limit" />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technologies</th>
+                        <th>Likes</th>
+                        <th>Dislikes</th>
+                        <th>like/dislike</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Technology in technologies|limitTo:Limit">
+                        <td>{{Technology.name}}</td>
+                        <td>{{Technology.Like}}</td>
+                        <td>{{Technology.Dislike}}</td>
+                        <td>
+                            <input type="button" value="like" ng-click="technologylike(Technology)" />
+                            <input type="button" value="dislike" ng-click="technologydislike(Technology)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+            <div>
+                {{message}}
+            
+                Countryname:{{country.countryname}}
+            
+            
+                Countrycapital:{{country.countrycapital}}
+                Countryflag:<img ng-src="{{country.countryflag}}"
+                                 alt="{{country.countryname+' flag'}}"
+                                 style="height:100px;width:100px" />
+            </div>
+            <p>Please register your details:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Registration Details</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Firstname </td>
+                    <td><input type="text" ng-model="employee.firstname" /></td>
+                </tr>
+                <tr>
+                    <td>Lastname </td>
+                    <td><input type="text" ng-model="employee.lastname" /></td>
+                </tr>
+                <tr>
+                    <td>gender </td>
+                    <td><input type="text" ng-model="employee.gender" /></td>
+                </tr>
+                </tbody>
+            </table>
+            
+            <div>
+                Firstname:{{employee.firstname}}
+                <br />
+                lastname:{{employee.lastname}}
+                <br />
+                gender:{{employee.gender}}
+            </div>
+            <br />
+
+
+        </div>
+        <hr>
+        <h3><strong style="color:red;font-size:120%">Note:</strong>we are still working on this website.<img src="http://www.w3schools.com/html/programming.gif" alt="Computer man" style="width:48px;height:48px;"></h3>
+    </div>
+
+    <div id="footer">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   Copyright © JBPSchools.com&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   Devby:KPR
+    </div>
+</body>
+</html>
